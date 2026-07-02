@@ -13,6 +13,3 @@ public interface IBlockable
     void Block();
 }
 
-// MOCK TEMPORAL: Esto simula el script PlayerMotor.
-// Bórralo cuando se suba el verdadero PlayerMotor.
-public class PlayerMotor : MonoBehaviour { }
