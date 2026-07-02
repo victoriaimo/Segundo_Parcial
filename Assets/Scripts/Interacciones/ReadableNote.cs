@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public sealed class ReadableNote : MonoBehaviour, IInteractable
+public sealed class ReadableNote : MonoBehaviour, IInteractable, IEventBusDependent
 {
     // Usamos el evento Clue
     private Clue _clue = new Clue { clueName = "Nota del diario de la hermana" };
