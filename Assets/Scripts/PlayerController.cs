@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float velocidad = 5f;
+    public float velocidadCorrer = 8f;
 
     private Rigidbody rb;
 
@@ -24,8 +25,15 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        float velocidadActual = velocidad;
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            velocidadActual = velocidadCorrer;
+        }
+
         Vector3 movimiento = new Vector3(movimientoX, 0, movimientoZ);
 
-        rb.MovePosition(transform.position + movimiento * velocidad * Time.fixedDeltaTime);
+        rb.MovePosition(transform.position + movimiento * velocidadActual * Time.fixedDeltaTime);
     }
 }
