@@ -227,126 +227,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alcanceEnZ: 1
   alcanceEnX: 1
---- !u!1 &3757948184242467143
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 9077418828135683466}
-  - component: {fileID: 8868267345685741190}
-  - component: {fileID: 452219319513274964}
-  - component: {fileID: 6089751535700889497}
-  - component: {fileID: 1007616041297101922}
-  m_Layer: 0
-  m_Name: ZonaVision
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &9077418828135683466
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3757948184242467143}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5867390612977253847}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8868267345685741190
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3757948184242467143}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &452219319513274964
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3757948184242467143}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6089751535700889497
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3757948184242467143}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1007616041297101922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3757948184242467143}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d28e8da683c64244bb51edbd3c658d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  alcanceEnZ: 5.01
-  alcanceEnX: 6.49
 --- !u!1 &4474119387317106748
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,7 +241,7 @@ GameObject:
   - component: {fileID: 5236341890056053183}
   - component: {fileID: 4917331745042258922}
   m_Layer: 0
-  m_Name: ZonaVision (1)
+  m_Name: ConoDeVision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -464,12 +344,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b58d3dc1126a4941ae886e7176ec5f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anguloVision: 140
-  capasObstruccion:
-    serializedVersion: 2
-    m_Bits: 16
-  ojosEnemigo: {fileID: 1319320940006966095}
-  movimientoEnemigo: {fileID: 2668665815852697304}
 --- !u!1 &5804339993700827087
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,7 +410,6 @@ Transform:
   m_Children:
   - {fileID: 2203007895828173642}
   - {fileID: 4690975326334625685}
-  - {fileID: 9077418828135683466}
   - {fileID: 7546593052881283012}
   - {fileID: 1319320940006966095}
   m_Father: {fileID: 0}
@@ -553,21 +426,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 629ea46aa12e84b4f8be2c4550531150, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  capasJugador:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  colliderCaptura: {fileID: 7188336656648412871}
-  capturaAlcance: 1
-  colliderVision: {fileID: 1007616041297101922}
-  VistaTiempoMax: 3
-  visionAlcance: 1
   anguloVision: 140
   capasObstruccion:
     serializedVersion: 2
     m_Bits: 16
   ojosEnemigo: {fileID: 1319320940006966095}
-  VistaTiempoActual: 0
+  colliderCaptura: {fileID: 7188336656648412871}
   movimientoEnemigo: {fileID: 2668665815852697304}
+  conoDeVision: {fileID: 4917331745042258922}
 --- !u!114 &2668665815852697304
 MonoBehaviour:
   m_ObjectHideFlags: 0

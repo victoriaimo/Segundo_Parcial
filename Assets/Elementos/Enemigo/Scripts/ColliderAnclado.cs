@@ -5,10 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider))]
 public class ColliderAnclado : MonoBehaviour
 {
-    private event Action<Collider> onCollisionEnter;
-    private event Action<Collider> onCollisionExit;
-
-    private List<LayerMask> targetLayers = null;
+    private event Action<Collider> OnCollisionEnter;
+    private event Action<Collider> OnCollisionExit;
 
     private BoxCollider boxCollider;
 
@@ -39,6 +37,7 @@ public class ColliderAnclado : MonoBehaviour
         {
             UpdateColliderDimensions();
             ultimoAlcanceEnZ = alcanceEnZ;
+            ultimoAlcanceEnX = alcanceEnX;
         }
     }
 
@@ -52,37 +51,18 @@ public class ColliderAnclado : MonoBehaviour
         transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, newPosZ);
     }
 
-    public void SetTargetLayers(LayerMask combinedLayers)
-    {
-        boxCollider.excludeLayers = ~combinedLayers;
-        boxCollider.includeLayers = combinedLayers;
-        boxCollider.layerOverridePriority = 1;
-    }
-
     private void OnTriggerStay(Collider other)
     {
-        onCollisionEnter?.Invoke(other);
+        OnCollisionEnter?.Invoke(other);
     }
     private void OnTriggerExit(Collider other)
     {
         Debug.LogWarning("Jugador salio");
-        onCollisionExit?.Invoke(other);
+        OnCollisionExit?.Invoke(other);
     }
 
-    public void SubscribirColision(Action<Collider> callback)
-    {
-        onCollisionEnter += callback;
-    }
-    public void SubscribirColisionSalida(Action<Collider> callback)
-    {
-        onCollisionExit += callback;
-    }
-    public void DesubscribirColision(Action<Collider> callback)
-    {
-        onCollisionEnter -= callback;
-    }
-    public void DesubscribirColisionSalida(Action<Collider> callback)
-    {
-        onCollisionExit -= callback;
-    }
+    public void SubscribirColision(Action<Collider> callback) { OnCollisionEnter += callback; }
+    public void SubscribirColisionSalida(Action<Collider> callback) { OnCollisionExit += callback; }
+    public void DesubscribirColision(Action<Collider> callback) { OnCollisionEnter -= callback; }
+    public void DesubscribirColisionSalida(Action<Collider> callback) { OnCollisionExit -= callback; }
 }
