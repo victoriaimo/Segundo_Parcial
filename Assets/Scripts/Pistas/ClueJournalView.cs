@@ -2,16 +2,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Este sí es MonoBehaviour porque probablemente controle la UI del Canvas
-public class ClueJournalView : MonoBehaviour
+public sealed class ClueJournalView : MonoBehaviour
 {
-    private ClueJournal _journal;
+    [SerializeField] private Transform _listContainer;
+    [SerializeField] private GameObject _entryPrefab; // prefab simple con un Text/TMP_Text
+
+    private IClueRepository _repository;
     private IGameEventBus _bus;
 
-    public void Construct(ClueJournal journal, IGameEventBus bus)
+    public void Construct(IClueRepository repository, IGameEventBus bus)
     {
-        _journal = journal;
+        _repository = repository;
         _bus = bus;
-        Debug.Log("[ClueJournalView] UI conectada correctamente con el Journal y el EventBus.");
+        _bus.Subscribe<ClueJournalUpdatedEvent>(OnJournalUpdated);
+
+        Refresh();
+    }
+
+    private void OnDestroy() => _bus?.Unsubscribe<ClueJournalUpdatedEvent>(OnJournalUpdated);
+
+    private void OnJournalUpdated(ClueJournalUpdatedEvent e) => Refresh();
+
+    private void Refresh()
+    {
+        if (_listContainer == null) return;
+
+        foreach (Transform child in _listContainer)
+            Destroy(child.gameObject);
+
+        foreach (var clue in _repository.GetAll())
+        {
+            var entry = Instantiate(_entryPrefab, _listContainer);
+            var label = entry.GetComponentInChildren<UnityEngine.UI.Text>();
+            if (label != null) label.text = clue.Title;
+        }
     }
 }
