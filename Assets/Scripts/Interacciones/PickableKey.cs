@@ -13,7 +13,7 @@ public sealed class PickableKey : MonoBehaviour, IInteractable, IEventBusDepende
 
     public string Prompt => $"Tomar {_displayName}";
 
-    public void Interact(PlayerMotor player)
+    public void Interact(PlayerController player)
     {
         if (_bus == null)
         {

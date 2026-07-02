@@ -20,7 +20,7 @@ public sealed class Drawer : MonoBehaviour, IInteractable
 
     public string Prompt => _isOpen ? "Cerrar cajón" : "Abrir cajón";
 
-    public void Interact(PlayerMotor player)
+    public void Interact(PlayerController player)
     {
         _isOpen = !_isOpen;
         // El deslizamiento animado (Lerp/DOTween) se resuelve en la etapa de

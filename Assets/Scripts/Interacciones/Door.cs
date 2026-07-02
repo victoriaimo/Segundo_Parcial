@@ -9,7 +9,7 @@ public sealed class Door : MonoBehaviour, IInteractable, IBlockable
 
     public string Prompt => _locked ? "Cerrada con llave" : (_isOpen ? "Cerrar puerta" : "Abrir puerta");
 
-    public void Interact(PlayerMotor player)
+    public void Interact(PlayerController player)
     {
         if (_locked)
         {

@@ -5,7 +5,7 @@ using UnityEngine;
 public interface IInteractable
 {
     string Prompt { get; }
-    void Interact(PlayerMotor player);
+    void Interact(PlayerController player);
 }
 
 public interface IBlockable

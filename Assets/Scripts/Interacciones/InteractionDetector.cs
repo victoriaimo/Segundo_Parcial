@@ -9,11 +9,11 @@ public sealed class InteractionDetector : MonoBehaviour
     [SerializeField] private Camera _playerCamera;
 
     private IInteractable _current;
-    private PlayerMotor _playerMotor;
+    private PlayerController _playerController;
 
     private void Awake()
     {
-        _playerMotor = GetComponent<PlayerMotor>();
+        _playerController = GetComponent<PlayerController>();
     }
 
     private void Update()
@@ -24,7 +24,7 @@ public sealed class InteractionDetector : MonoBehaviour
         if (_current != null && Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log($"[InteractionDetector] Ejecutando: {_current.Prompt}");
-            _current.Interact(_playerMotor);
+            _current.Interact(_playerController);
         }
     }
 

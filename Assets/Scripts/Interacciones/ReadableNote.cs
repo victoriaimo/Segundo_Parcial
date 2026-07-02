@@ -14,7 +14,7 @@ public sealed class ReadableNote : MonoBehaviour, IInteractable, IEventBusDepend
 
     public string Prompt => "Leer nota";
 
-    public void Interact(PlayerMotor player)
+    public void Interact(PlayerController player)
     {
         if (_bus == null)
         {
