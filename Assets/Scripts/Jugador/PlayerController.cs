@@ -32,6 +32,17 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector3.up * fuerzaSalto, ForceMode.Impulse);
             estaEnSuelo = false;
         }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Ray ray = new Ray(camaraJugador.position, camaraJugador.forward);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, 3f))
+            {
+                Debug.Log("Objeto interactuable detectado: " + hit.collider.name);
+                IInteractable interactable = hit.collider.GetComponent<IInteractable>();
+                interactable?.Interact(this);
+            }
+        }
     }
 
     void FixedUpdate()

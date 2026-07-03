@@ -10,7 +10,12 @@ public sealed class PickableKey : MonoBehaviour, IInteractable, IEventBusDepende
     private IGameEventBus _bus;
 
     public void Construct(IGameEventBus bus) => _bus = bus;
-
+    public void ConstructWithParam(IGameEventBus bus, string keyId, string displayName)
+    {
+        _bus = bus;
+        _itemId = keyId;
+        _displayName = displayName;
+    }
     public string Prompt => $"Tomar {_displayName}";
 
     public void Interact(PlayerController player)
