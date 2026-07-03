@@ -2,10 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public sealed class Door : MonoBehaviour, IInteractable, IBlockable
+public sealed class Door : MonoBehaviour, IInteractable, IBlockable, IEventBusDependent
 {
+    [field: SerializeField] public string KeyID {  get; private set; }
     [SerializeField] private bool _locked;
     private bool _isOpen = false;
+    private IGameEventBus _bus;
+
+    public void Construct(IGameEventBus bus)
+    {
+        _bus = bus;
+
+        _bus.Subscribe<ItemAcquiredEvent>(
+            (ItemAcquiredEvent eventData) => { if (eventData.Item.ItemId == KeyID) { _locked = false; } }
+        );
+    }
 
     public string Prompt => _locked ? "Cerrada con llave" : (_isOpen ? "Cerrar puerta" : "Abrir puerta");
 
@@ -24,4 +35,6 @@ public sealed class Door : MonoBehaviour, IInteractable, IBlockable
     }
 
     public void Block() => _locked = true;
+
+    
 }
